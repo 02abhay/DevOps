@@ -1,0 +1,53 @@
+How to create an aws account? 
+How to create a server on AWS? 
+How to get into the server and execute Linux Commands? 
+I want make this server as webserver 
+$ sudo -i 
+# apt-get update 
+# apt-get install apache2 ( it is a web server) # adduser anil 
+# su anil 
+$ cd 
+$ pwd 
+$ mkdir myfolder 
+$ cd myfolder 
+$ touch f1 f2 f3 
+$ exit 
+# visudo 
+anil ALL=(ALL) NOPASSWD: ALL 
+Press x , press y, press enter 
+# su anil 
+$ sudo apt-get install apache2 
+Ssh password less authentication: 
+(without passwd and without pem file )
+Configure Master server 
+1) Create aws ubuntu 18 server and getting into by git bash 2) Add user 
+# adduser anil 
+3) Make sudoer 
+#visudo 
+Anil ALL=ALL NOPASSWD: ALL 
+Ctr+x, press y and enter 
+4) Change passwd authentication ( with pass and without pem file) # vi /etc/ssh/sshd_config 
+Password authentication yes 
+shift+: wq! 
+5) Restart ssh service 
+# service ssh restart
+Configure NOdes severs 
+6) Create aws ubuntu 18 server and getting into by git bash 
+7) Add user 
+# adduser anil 
+8) Make sudoer 
+#visudo 
+Anil ALL=ALL NOPASSWD: ALL 
+Ctr+x, press y and enter 
+9) Change passwd authentication ( with pass and without pem file) # vi /etc/ssh/sshd_config 
+Password authentication yes 
+shift+: wq! 
+10) Restart ssh service 
+# service ssh restart 
+Connect from master to nodes without passwd and pem file ON MASTER AS ANIL USER 
+11) # su anil 
+12) $ cd 
+13) $ pwd 
+14) $ ssh-keygen 
+15) $ ssh-coy-id <private ip of nodes> 
+16) $ ssh <private ip of nodes>
